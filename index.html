@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stutter Counter</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #669966; /* Slight dark lime green */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #counterDisplay {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: 2px solid black;
+      background-color: white;
+      cursor: pointer;
+      margin: 8px;
+      border-radius: 8px;
+    }
+
+    button:active {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="counterDisplay">
+      <strong>Stutter Count:</strong> <span id="counter">0</span>
+    </div>
+    <button id="countButton">Click Me</button>
+    <button id="resetButton">Reset</button>
+  </div>
+
+  <script>
+    let count = 0;
+    const counterElement = document.getElementById("counter");
+    const countButton = document.getElementById("countButton");
+    const resetButton = document.getElementById("resetButton");
+
+    countButton.addEventListener("click", () => {
+      count++;
+      counterElement.textContent = count;
+    });
+
+    resetButton.addEventListener("click", () => {
+      count = 0;
+      counterElement.textContent = count;
+    });
+  </script>
+
+</body>
+</html>
